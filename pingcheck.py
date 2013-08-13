@@ -1,5 +1,11 @@
 #!/usr/bin/python
 
+"""
+This script can be used as a plugin for Rackspace Monitoring as a Service (MaaS)
+It expects 1 argument which can be an IP or a FQDN. It will then send a ping to that target from the server the script is installed on and retun the time taken for the ping to be received. One use case would be to monitor internal networks such as a Rackspace RackConnected.
+"""
+
+
 import ping 
 import sys
 import re
@@ -10,6 +16,9 @@ import re
 #parser.add_argument("ip")
 #args = parser.parse_args()
 #print 'status', args.ip
+
+ping_timeout = 3 # Seconds
+packet_size = 32 # KB
 
 # Check if argument was supplied
 if len(sys.argv) > 1:
@@ -29,7 +38,7 @@ else:
 # Set target
 target = sys.argv[1]
 # Ping target
-ping_result = ping.do_one(target, 3, 32)
+ping_result = ping.do_one(target, ping_timeout, packet_size)
 
 # Check if we got a response
 if not ping_result:
