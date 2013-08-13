@@ -1,7 +1,12 @@
 #!/usr/bin/python
 
 """
-This script can be used as a plugin for Rackspace Monitoring as a Service (MaaS). It expects 1 argument which can be an IP or a FQDN. It will then send a ping to that target from the server the script is installed on and retun the time taken for the ping to be received. One use case would be to monitor internal networks such as a Rackspace RackConnected.
+This script can be used as a plugin for Rackspace Monitoring as a 
+Service (MaaS). It expects 1 argument which can be an IP or a FQDN. 
+It will then send a ping to that target from the server the script 
+is installed on and retun the time taken for the ping to be received. 
+One use case would be to monitor internal networks such as a 
+Rackspace RackConnected.
 """
 
 
